@@ -165,21 +165,6 @@ float ErriezBMX280::readPressure()
 }
 
 /*!
- * \brief Read approximate altitude
- * \param seaLevel
- *      Sea level in hPa
- * \return
- *      Altitude (float)
- */
-float ErriezBMX280::readAltitude(float seaLevel)
-{
-    float atmospheric = readPressure() / 100.0F;
-
-    // In Si units for Pascal
-    return 44330.0 * (1.0 - pow(atmospheric / seaLevel, 0.1903));
-}
-
-/*!
  * \brief Read humidity (BME280 only)
  * \return
  *      Humidity (float)
