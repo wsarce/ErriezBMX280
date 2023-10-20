@@ -122,10 +122,6 @@ void loop()
     Serial.print(bmx280.readPressure() / 100.0F);
     Serial.println(" hPa");
 
-    Serial.print(F("Altitude:    "));
-    Serial.print(bmx280.readAltitude(SEA_LEVEL_PRESSURE_HPA));
-    Serial.println(" m");
-
     Serial.println();
 
     delay(1000);
